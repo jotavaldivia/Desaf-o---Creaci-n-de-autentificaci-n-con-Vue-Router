@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import firebase from 'firebase'
+import Users from '../views/Users.vue'
+import User from '../components/users/User.vue'
+import UserCreate from '../components/users/UserCreate.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +13,31 @@ const routes = [
     path: '/Home',
     name: 'Home',
     component: Home,
+    meta:{
+      autenticado:true,
+    }
+  },
+  {
+    path: '/usuarios',
+    name: 'Users',
+    component: Users,
+    meta:{
+      autenticado:true,
+    }
+  },
+  {
+    path:'/usuarios/:id',
+    name:'User',
+    component:User,
+    props:true,
+    meta:{
+      autenticado:true,
+    }
+  },
+  {
+    path:"/usuario",
+    name:'addUser',
+    component:UserCreate,
     meta:{
       autenticado:true,
     }

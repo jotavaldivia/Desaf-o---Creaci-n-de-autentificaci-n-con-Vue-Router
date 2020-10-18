@@ -4,6 +4,9 @@
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <h1> Bienvenido estas logeado</h1>
     <button type="submit" class="btn btn-danger" @click.prevent='logout'>Salir</button>
+    <button type="submit" class="btn btn-success">
+        <router-link :to="`/usuarios`">Ver Usuarios</router-link>
+    </button>
 </div>
 </template>
 
